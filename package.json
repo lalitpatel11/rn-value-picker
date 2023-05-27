@@ -1,0 +1,19 @@
+{
+  "name": "rn-value-picker",
+  "version": "1.0.0",
+  "description": "measurement's unit value picker with simple modal ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.63.0"
+  },
+  "keywords": [
+    "rn-value-picker",
+    "value-picker"
+  ],
+  "author": "lalit patel",
+  "license": "ISC"
+}
