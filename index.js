@@ -47,7 +47,6 @@ const ValuePicker = ({
   };
   //function : imp function
   const fetchData = () => {
-    console.log("fetching....");
     const tempData = [""];
     for (let i = minValue; i <= maxValue; i++) {
       if (unit.trim().length > 0) {
@@ -57,7 +56,6 @@ const ValuePicker = ({
       }
     }
     tempData.push("");
-    console.log(tempData);
     setData(tempData);
   };
   const handleScroll = (event) => {
@@ -65,9 +63,7 @@ const ValuePicker = ({
     const visibleIndex = Math.floor(offsetY / itemHeight) + 1; // Calculate the index of the middle item
     if (visibleIndex >= 0 && visibleIndex < data.length) {
       const middleItem = data[visibleIndex];
-      console.log("Middle item index:", visibleIndex);
       setSelectedIndex(visibleIndex);
-      console.log("Middle item value:", middleItem);
     }
   };
   const confirmPress = () => {

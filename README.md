@@ -78,7 +78,7 @@ export default App;
 
 ## Screenshots
 
-![screenshots](Screenshot/ss.png)
+![screenshots](https://github.com/lalitpatel11/rn-value-picker/blob/main/Screenshot/ss.png)
 
 ### List of props that you can use :-
 
