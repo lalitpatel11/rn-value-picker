@@ -78,9 +78,7 @@ export default App;
 
 ## Screenshots
 
-![screenshots](Screenshot/ss1.png)
-![screenshots](Screenshot/ss2.png)
-![screenshots](Screenshot/ss3.png)
+![screenshots](Screenshot/ss.png)
 
 ### List of props that you can use :-
 
