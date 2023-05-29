@@ -1,8 +1,9 @@
 {
   "name": "rn-value-picker",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "measurement's unit value picker with simple modal ",
-  "main": "index.js",
+  "main": "index.tsx",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/lalitpatel11/rn-value-picker.git"
