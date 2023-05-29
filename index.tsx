@@ -10,15 +10,41 @@ import {
   FlatList,
 } from "react-native";
 const { width, height } = Dimensions.get("screen");
-/**
- * @typedef {object} PositionProps
- * @property {"bottom" | "center" } position - The name property with specific values.
- */
-/**
- * MyComponent description.
- * @param {PositionProps} props - The props object.
- */
-const ValuePicker = ({
+interface PickerProps {
+  visible: boolean;
+  setVisibility: any;
+  value?: any;
+  setValue: any;
+  minValue?: number;
+  maxValue?: number;
+  unit?: string;
+  Title?: string;
+  cancelButtonText?: string;
+  cancelButtonStyle?: any;
+  cancelButtonTextStyle?: any;
+  confirmButtonText?: string;
+  confirmButtonStyle?: any;
+  confirmButtonTextStyle?: any;
+  position?: "bottom" | "center";
+  bgBlur?:
+    | "00"
+    | "11"
+    | "22"
+    | "33"
+    | "44"
+    | "55"
+    | "66"
+    | "77"
+    | "88"
+    | "99"
+    | "AA"
+    | "BB"
+    | "CC"
+    | "DD"
+    | "EE"
+    | "FF";
+}
+const ValuePicker: React.FC<PickerProps> = ({
   visible,
   setVisibility,
   value,
@@ -34,6 +60,7 @@ const ValuePicker = ({
   confirmButtonStyle,
   confirmButtonTextStyle,
   position = "center",
+  bgBlur = "66",
 }) => {
   //variables : ref
   const flatlistRef = useRef();
@@ -52,13 +79,13 @@ const ValuePicker = ({
       if (unit.trim().length > 0) {
         tempData.push(`${i} ${unit}`);
       } else {
-        tempData.push(i);
+        tempData.push(`${i}`);
       }
     }
     tempData.push("");
     setData(tempData);
   };
-  const handleScroll = (event) => {
+  const handleScroll = (event: any) => {
     const offsetY = event.nativeEvent.contentOffset.y;
     const visibleIndex = Math.floor(offsetY / itemHeight) + 1; // Calculate the index of the middle item
     if (visibleIndex >= 0 && visibleIndex < data.length) {
@@ -71,6 +98,41 @@ const ValuePicker = ({
     setValue(value);
     closeModal();
   };
+  //variables : styles
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#000000" + bgBlur,
+    },
+    cenContainer: {
+      flex: 1,
+      backgroundColor: "#000000" + bgBlur,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    blurView: {
+      flex: 1,
+    },
+    cenBlurView: {
+      position: "absolute",
+      top: 0,
+      right: 0,
+      left: 0,
+      bottom: 0,
+    },
+    mainView: {
+      backgroundColor: "#FFFFFF",
+      padding: 20,
+      borderTopRightRadius: 30,
+      borderTopLeftRadius: 30,
+    },
+    cenMainView: {
+      height: height / 3,
+      backgroundColor: "#FFFFFF",
+      padding: 20,
+      borderRadius: 5,
+    },
+  });
   //function : render function
   const renderItem = ({ item, index }) => {
     const isMiddleItem = index === selectedIndex;
@@ -201,38 +263,3 @@ const ValuePicker = ({
 };
 
 export default ValuePicker;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000000" + "dd",
-  },
-  cenContainer: {
-    flex: 1,
-    backgroundColor: "#000000" + "66",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  blurView: {
-    flex: 1,
-  },
-  cenBlurView: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
-  },
-  mainView: {
-    backgroundColor: "#FFFFFF",
-    padding: 20,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
-  },
-  cenMainView: {
-    height: height / 3,
-    backgroundColor: "#FFFFFF",
-    padding: 20,
-    borderRadius: 5,
-  },
-});

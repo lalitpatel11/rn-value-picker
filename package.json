@@ -1,8 +1,12 @@
 {
   "name": "rn-value-picker",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "measurement's unit value picker with simple modal ",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lalitpatel11/rn-value-picker.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +14,16 @@
     "react": "*",
     "react-native": ">=0.63.0"
   },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  },
   "keywords": [
     "rn-value-picker",
-    "value-picker"
+    "value-picker",
+    "picker","expo-picker",
+    "react-native-picker",
+    "measurement-picker",
+    "modal-picker"
   ],
   "author": "lalit patel",
   "license": "ISC"
